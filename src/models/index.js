@@ -7,13 +7,14 @@ const Collection = require("../models/data-collection");
 
 const { Sequelize, DataTypes } = require("sequelize");
 
-const DATABASE_URL = "postgres://localhost:5432/gallery"
-  // process.env.NODE_ENV === "test" ? "sqlite:memory:" : process.env.DATABASE_URL;
+const DATABASE_URL = "postgres://localhost:5432/gallery";
+// process.env.NODE_ENV === "test" ? "sqlite:memory:" : process.env.DATABASE_URL;
+
 let sequelizeOptions =
   process.env.NODE_ENV === "production"
     ? {
         dialectOptions: {
-          ssl: {
+          SSL: {
             require: true,
             rejectUnauthorized: false,
           },
